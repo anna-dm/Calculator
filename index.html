@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Онлайн калькулятор</title>
+		<link rel="stylesheet" href="./css/main.css" />
+		<link rel="stylesheet" href="./libs/noUiSlider/nouislider.css">
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="title">Онлайн калькулятор</div>
+			<div class="row">
+				<form id="form" class="col-left">
+
+					<!-- programms-wraper -->
+					<div class="programms-wraper">
+						<input type="radio" name="program" value="base" id="base-value" class="radio-hidden" checked>
+						<label for="base-value" class="radio-label">Базовая программа <span id="base-text">XX</span></label>
+
+						<input type="radio" name="program" value="it" id="it-value" class="radio-hidden">
+						<label for="it-value" class="radio-label">Ипотека для IT <span id="it-text">XX</span></label>
+
+						<input type="radio" name="program" value="gov" id="gov-value" class="radio-hidden">
+						<label for="gov-value" class="radio-label">Господдержка <span id="gov-text">XX</span></label>
+
+						<input type="radio" name="program" value="zero" id="zero-value" class="radio-hidden">
+						<label for="zero-value" class="radio-label">Без первоначального взноса <span id="zero-text">XX</span></label>
+					</div>
+					<!-- // programms-wraper -->
+
+					<!-- params-wrapper -->
+					<div class="params-wrapper">
+
+						<label class="param">
+							<div class="param__details">
+								<div class="param__title">Стоимость недвижимости</div>
+								<input type="text" class="param__value" value="12000000" inputmode="decimal" id="input-cost">
+							</div>
+							<div class="param__range-slider" id="slider-cost"></div>
+
+							<div class="param__limits limit">
+								<div class="limit__from">375 тыс. Р</div>
+								<div class="limit__50">10 млн Р</div>
+								<div class="limit__to">100 млн Р</div>
+							</div>
+						</label>
+
+						<label class="param">
+							<div class="param__details">
+								<div class="param__title">Первоначальный взнос</div>
+								<input type="text" class="param__value" value="4980000" id="input-downpayment">
+							</div>
+							<div class="param__range-slider"></div>
+
+							<div class="param__limits limit">
+								<div class="limit__from">15%</div>
+								<div class="limit__to">90%</div>
+							</div>
+						</label>
+
+						<label class="param">
+							<div class="param__details">
+								<div class="param__title">Срок кредита</div>
+								<input type="text" class="param__value" value="12" id="input-term">
+							</div>
+							<div class="param__range-slider"></div>
+
+							<div class="param__limits limit">
+								<div class="limit__from">1 год</div>
+								<div class="limit__to">30 лет</div>
+							</div>
+						</label>
+
+					</div>
+					<!-- // params-wrapper -->
+
+				</form>
+				<!-- Col Right -->
+				<div class="col-right">
+
+					<!-- Summary -->
+					<div class="summary">
+
+						<div class="summary__item summary-item">
+							<div class="summary-item__title">Ежемесячный платеж</div>
+							<div class="summary-item__value summary-item__value--bigger" id="total-month-payment">XXXX</div>
+						</div>
+
+						<div class="summary__item summary-item">
+							<div class="summary-item__title">Процентная ставка</div>
+							<div class="summary-item__value summary-item__value--bigger summary-item__value--percents" id="total-percent">XX</div>
+						</div>
+
+						<div class="summary__item summary-item">
+							<div class="summary-item__title">Сумма кредита</div>
+							<div class="summary-item__value" id="total-cost">XXXX</div>
+						</div>
+
+					</div>
+					<!-- // Summary -->
+
+				</div>
+				<!-- // Col Right -->
+			</div>
+		</div>
+
+    </body>
+</html>
