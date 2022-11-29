@@ -204,6 +204,10 @@ body {
 
 /* Sliders */
 
+#slider-cost {
+  height: 8px;
+}
+
 #slider-cost,
 #slider-cost .noUi-handle {
   box-shadow: none;
