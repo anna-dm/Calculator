@@ -4,9 +4,9 @@ import { percentFormatter } from "./formatters.js"
 
 
 /*Ставки по ипотеке*/
-const programBase = 0.12;
+const programBase = 0.099;
 const programIt = 0.047;
-const programGov = 0.12;
+const programGov = 0.067;
 const programZero = 0.108;
 
 // Указываем ставку в радио кнопках
