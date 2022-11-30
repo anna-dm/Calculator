@@ -204,12 +204,18 @@ body {
 
 /* Sliders */
 
-#slider-cost {
+#slider-cost,
+#slider-downpayment,
+#slider-term {
   height: 8px;
 }
 
 #slider-cost,
-#slider-cost .noUi-handle {
+#slider-downpayment,
+#slider-term,
+#slider-cost .noUi-handle,
+#slider-downpayment .noUi-handle,
+#slider-term .noUi-handle {
   box-shadow: none;
 }
 
@@ -219,11 +225,31 @@ body {
   display: none;
 }
 
+#slider-term .noUi-handle::before,
+#slider-term .noUi-handle::after {
+  display: none;
+}
+
+#slider-downpayment .noUi-handle::before,
+#slider-downpayment .noUi-handle::after {
+  display: none;
+}
+
 #slider-cost .noUi-connect {
   background: #21bb57;
 }
 
-#slider-cost .noUi-handle {
+#slider-downpayment .noUi-connect {
+  background: #21bb57;
+}
+
+#slider-term .noUi-connect {
+  background: #21bb57;
+}
+
+#slider-cost .noUi-handle,
+#slider-downpayment .noUi-handle,
+#slider-term .noUi-handle {
   height: 20px;
   width: 20px;
   top: -7px;
@@ -237,6 +263,8 @@ body {
   transition: transform 0.1s ease-in;
 }
 
-#slider-cost .noUi-handle:hover {
+#slider-cost .noUi-handle:hover,
+#slider-downpayment .noUi-handle:hover,
+#slider-term .noUi-handle:hover {
   transform: scale(1.3);
 }

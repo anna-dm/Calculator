@@ -64,6 +64,7 @@ function calcMortgage() {
 
 }
 
+// Slider Cost
 
 const sliderCost = document.getElementById('slider-cost');
 
@@ -91,3 +92,75 @@ sliderCost.noUiSlider.on('update', function () {
   cleaveCost.setRawValue(sliderValue);
   calcMortgage();
 });
+
+
+// Slider DownPayment
+
+const sliderDownpayment = document.getElementById('slider-downpayment');
+
+noUiSlider.create(sliderDownpayment, {
+  start: 6000000,
+  connect: 'lower',
+  tooltips: true,
+  step: 100000,
+  range: {
+    'min': 0,
+    '50%': [10000000, 1000000],
+    'max': 100000000,
+  },
+
+  format: wNumb({
+    decimals: 0,
+    thousand: ' ',
+    suffix: '',
+  })
+});
+
+
+sliderDownpayment.noUiSlider.on('update', function () {
+  const sliderValue = parseInt(sliderDownpayment.noUiSlider.get(true));
+  cleaveDownPayment.setRawValue(sliderValue);
+  calcMortgage();
+});
+
+
+// Slider Years
+
+const sliderTerm = document.getElementById('slider-term');
+
+noUiSlider.create(sliderTerm, {
+  start: 1,
+  connect: 'lower',
+  tooltips: true,
+  step: 1,
+  range: {
+    'min': 1,
+    'max': 30,
+  },
+
+  format: wNumb({
+    decimals: 0,
+    thousand: ' ',
+    suffix: '',
+  })
+});
+
+
+sliderTerm.noUiSlider.on('update', function () {
+  const sliderValue = parseInt(sliderTerm.noUiSlider.get(true));
+  cleaveTerm.setRawValue(sliderValue);
+  calcMortgage();
+});
+
+// Форматирование inputCost
+
+inputCost.addEventListener('input', function () {
+  const value = +cleaveCost.getRawValue();
+  if (value > 100000000) {
+    inputCost.closest('.param__details').classList.add('.param__details--error');
+  }
+
+  if (value <= 100000000) {
+    inputCost.closest('.param__details').classList.remove('.param__details--error');
+  }
+})
